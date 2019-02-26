@@ -1,3 +1,8 @@
 cmake_minimum_required (VERSION 2.6)
+SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
+SET(CMAKE_CURRENT_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+message ("CMake install prefix  = ${CMAKE_INSTALL_PREFIX}")
+message ("CMake bin dir  = ${CMAKE_INSTALL_PREFIX}")
 project (Test)
 add_executable(test main.cpp)
+install (TARGETS test DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/)
