@@ -1,4 +1,4 @@
-#include <vector-op.h>
+#include "vector-op.hpp"
 
 mathVector addVectors(const mathVector v1, const mathVector v2) {
 	mathVector result;

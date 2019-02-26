@@ -1,9 +1,9 @@
 #pragma once
 
-typedef struct {
+typedef struct _mathVector{
 	double x;
 	double y;
-	mathVector():x(0),y(0){};
+	_mathVector():x(0),y(0){};
 } mathVector;
 
 mathVector addVectors(mathVector v1, mathVector v2);
