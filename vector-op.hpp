@@ -1,14 +1,6 @@
 #pragma once
 
-typedef struct _mathVector{
-	double x;
-	double y;
-	double z;
-	_mathVector():x(0),y(0){};
-	_mathVector(double a, double b):x(a),y(b),z(0){};
-	_mathVector(double a, double b, double c):x(a),y(b),z(c){};
-} mathVector;
-
-mathVector addVectors(mathVector v1, mathVector v2);
-mathVector substractVectors(mathVector v1, mathVector v2);
-mathVector scaleVector(mathVector v, double scalar);
+void printVector(std::vector<double> v);
+std::vector<double> addVectors(std::vector<double> v1, std::vector<double> v2);
+std::vector<double> substractVectors(std::vector<double> v1, std::vector<double> v2);
+std::vector<double> scaleVector(std::vector<double> v, double scalar);

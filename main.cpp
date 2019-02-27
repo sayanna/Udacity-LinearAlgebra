@@ -7,36 +7,36 @@ using namespace std;
 #define errlog printf
 
 static void _testScaleVector() {
-	mathVector v1(1.671,-1.012,-0.318);
+	std::vector<double> v1 {1.671,-1.012,-0.318};
 	double scale = 7.41;
 
-	mathVector res = scaleVector(v1,scale);
+	std::vector<double> res = scaleVector(v1,scale);
 
-	msglog("v1 = [%f,%f,%f]\n",v1.x,v1.y,v1.z);
+	printVector(v1);
 	msglog("scale = %f\n",scale);
-	msglog("res = [%f,%f,%f]\n",res.x,res.y,res.z);
+	printVector(res);
 }
 
 static void _testSubVectors() {
-	mathVector v1(7.119,8.215);
-	mathVector v2(-8.223,0.878);
+	std::vector<double> v1{7.119,8.215};
+	std::vector<double> v2{-8.223,0.878};
 
-	mathVector res = substractVectors(v1,v2);
+	std::vector<double> res = substractVectors(v1,v2);
 
-	msglog("v1 = [%f,%f]\n",v1.x,v1.y);
-	msglog("v2 = [%f,%f]\n",v2.x,v2.y);
-	msglog("res = [%f,%f]\n",res.x,res.y);
+	printVector(v1);
+	printVector(v2);
+	printVector(res);
 }
 
 static void _testAddVectors() {
-	mathVector v1(8.218,-9.341);
-	mathVector v2(-1.129,2.111);
+	std::vector<double> v1{8.218,-9.341};
+	std::vector<double> v2{-1.129,2.111};
 
-	mathVector res = addVectors(v1,v2);
+	std::vector<double> res = addVectors(v1,v2);
 
-	msglog("v1 = [%f,%f]\n",v1.x,v1.y);
-	msglog("v2 = [%f,%f]\n",v2.x,v2.y);
-	msglog("res = [%f,%f]\n",res.x,res.y);
+	printVector(v1);
+	printVector(v2);
+	printVector(res);
 }
 
 static void printUsage() {

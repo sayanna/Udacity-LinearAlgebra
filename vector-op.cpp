@@ -1,28 +1,55 @@
 #include "vector-op.hpp"
 
-mathVector addVectors(const mathVector v1, const mathVector v2) {
-	mathVector result;
-	result.x = v1.x+v2.x;
-	result.y = v1.y+v2.y;
-	result.z = v1.z+v2.z;
+std::vector<double> addVectors(const std::vector<double> &v1, const std::vector<double> &v2) {
+	int sz1 = v1.size();
+	int sz2 = v2.size();
+
+	if (!sz1)       { return std::vector<double>(); }
+	if (sz1 != sz2) { return std::vector<double>(); }
+	std::vector<double> result(sz1,0);
+
+	for (int i=0; i<sz1; ++i) {
+		result[i] = v1[i]+v2[i];
+	}
 
 	return result;
 }
 
-mathVector substractVectors(const mathVector v1, const mathVector v2) {
-	mathVector result;
-	result.x = v1.x-v2.x;
-	result.y = v1.y-v2.y;
-	result.y = v1.z-v2.z;
+std::vector<double> substractVectors(const std::vector<double> v1, const std::vector<double> v2) {
+	int sz1 = v1.size();
+	int sz2 = v2.size();
+
+	if (!sz1)       { return std::vector<double>(); }
+	if (sz1 != sz2) { return std::vector<double>(); }
+	std::vector<double> result(sz1,0);
+
+	for (int i=0; i<sz1; ++i) {
+		result[i] = v1[i]-v2[i];
+	}
 
 	return result;
 }
 
-mathVector scaleVector(const mathVector v, const double scalar) {
-	mathVector result;
-	result.x = (v.x*scalar);
-	result.y = (v.y*scalar);
-	result.z = (v.z*scalar);
+std::vector<double> scaleVector(const std::vector<double> v, const double scalar) {
+	int sz = v.size();
+
+	if (!sz) { return std::vector<double>(); }
+	std::vector<double> result(sz,0);
+
+	for (int i=0; i<sz; ++i) {
+		result[i] = v[i]*scalar;
+	}
 
 	return result;
+}
+
+void printVector(std::vector<double> v) {
+	int sz = v.size();
+
+	if (!sz) { return; }
+
+	for (auto e : v) {
+		std::cout << e << ",";
+	}
+	std::cout << std::endl;
 }
