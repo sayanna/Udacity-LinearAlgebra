@@ -1,3 +1,4 @@
+#include <iostream>
 #include "vector-op.hpp"
 
 std::vector<double> addVectors(const std::vector<double> &v1, const std::vector<double> &v2) {
@@ -15,7 +16,7 @@ std::vector<double> addVectors(const std::vector<double> &v1, const std::vector<
 	return result;
 }
 
-std::vector<double> substractVectors(const std::vector<double> v1, const std::vector<double> v2) {
+std::vector<double> substractVectors(const std::vector<double> &v1, const std::vector<double> &v2) {
 	int sz1 = v1.size();
 	int sz2 = v2.size();
 
@@ -30,7 +31,7 @@ std::vector<double> substractVectors(const std::vector<double> v1, const std::ve
 	return result;
 }
 
-std::vector<double> scaleVector(const std::vector<double> v, const double scalar) {
+std::vector<double> scaleVector(const std::vector<double> &v, const double scalar) {
 	int sz = v.size();
 
 	if (!sz) { return std::vector<double>(); }
@@ -45,11 +46,15 @@ std::vector<double> scaleVector(const std::vector<double> v, const double scalar
 
 void printVector(std::vector<double> v) {
 	int sz = v.size();
+	int sz1 = sz-1;
 
 	if (!sz) { return; }
 
-	for (auto e : v) {
-		std::cout << e << ",";
+	std::cout << "[";
+	for (int i=0; i<sz; ++i) {
+		std::cout << v[i];
+
+		if (i < sz1) { std::cout << ","; }
 	}
-	std::cout << std::endl;
+	std::cout << "]" << std::endl;
 }

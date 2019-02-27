@@ -1,6 +1,7 @@
 #pragma once
+#include <vector>
 
 void printVector(std::vector<double> v);
-std::vector<double> addVectors(std::vector<double> v1, std::vector<double> v2);
-std::vector<double> substractVectors(std::vector<double> v1, std::vector<double> v2);
-std::vector<double> scaleVector(std::vector<double> v, double scalar);
+std::vector<double> addVectors(const std::vector<double> &v1, const std::vector<double> &v2);
+std::vector<double> substractVectors(const std::vector<double> &v1, const std::vector<double> &v2);
+std::vector<double> scaleVector(const std::vector<double> &v, const double scalar);
